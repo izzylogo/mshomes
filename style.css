@@ -145,7 +145,7 @@
     }
 
     .hero-content h1 {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
     }
 
     .hero-content h1::after {
@@ -631,7 +631,7 @@
     }
 
     .hero-content h1 {
-        font-size: 2rem;
+        font-size: 2.8rem;
     }
 
     .search-fields {
@@ -711,7 +711,7 @@
 
 @media (max-width: 480px) {
     .hero-content h1 {
-        font-size: 1.8rem;
+        font-size: 2.4rem;
     }
 
     .about-content h2,
