@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="logo2.png" alt="Logo">
+    </div>
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#properties">Properties</a></li>
+    </ul>
+    <a href="#contact" class="login-btn">Contact Us</a>
+    <button class="menu-btn">
+        <i class="fas fa-bars"></i>
+    </button>
+</header>
+
+<div class="mobile-menu">
+    <div class="mobile-menu-header">
+        <button class="close-menu">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    <ul class="mobile-nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#properties">Properties</a></li>
+    </ul>
+</div>
+
+<section class="hero">
+    <div class="hero-container">
+        <div class="hero-content">
+            <h1>Modern living<br>for everyone</h1>
+            <p>We provide a complete service for the sale, purchase or rental of real estate. We have been operating in Spain for more than 15 years.</p>
+            <div class="search-bar">
+                <div class="search-input">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <input type="text" placeholder="Search of location">
+                </div>
+                <button class="search-button">Search</button>
+            </div>
+            <div class="browse-more-container">
+                <button class="learn-more">Learn More</button>
+                <button class="browse-more">Browse Properties</button>
+            </div>
+            <div class="statistics">
+                <div class="stat-item">
+                    <h2>200+</h2>
+                    <p>Happy Customers</p>
+                </div>
+                <div class="stat-item">
+                    <h2>10k+</h2>
+                    <p>Properties For Clients</p>
+                </div>
+                <div class="stat-item">
+                    <h2>16+</h2>
+                    <p>Years of Experience</p>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <!-- <div class="dots-pattern"></div> -->
+            <img src="hero3.png" alt="Modern Apartment Building.">
+        </div>
+    </div>
+</section>
+
+<section class="about" id="about">
+    <div class="about-container">
+        <div class="about-image-wrapper">
+            <img src="about.png" alt="Our Team">
+            <div class="stats-card">
+                <div class="stats-number">95%</div>
+                <div class="stats-label">Client Satisfaction</div>
+            </div>
+        </div>
+        <div class="about-content">
+            <span class="section-subtitle about-title">ABOUT MSHOMES</span>
+            <h2>Pioneering Real Estate<br>for a Better Tomorrow</h2>
+            <p class="about-description">MSHomes  is a catalyst for transformation in the housing sector, revolutionizing real estate through innovation.</p>
+            
+            <div class="features-list">
+                <div class="feature-item">
+                    <div class="checkmark-circle">✓</div>
+                    <div class="feature-content">
+                        <h3>Sustainable Innovation</h3>
+                        <p>Combining cutting-edge technology with environmentally responsible practices.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="checkmark-circle">✓</div>
+                    <div class="feature-content">
+                        <h3>Client Empowerment</h3>
+                        <p>Providing comprehensive support and resources to enhance your property investment.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="checkmark-circle">✓</div>
+                    <div class="feature-content">
+                        <h3>Property Security</h3>
+                        <p>Contributing to secure and sustainable real estate solutions for our clients.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#" class="learn-more-btn">Learn More <span class="arrow">→</span></a>
+        </div>
+    </div>
+</section>
+
+<section class="properties" id="properties">
+    <div class="container">
+        <span class="section-subtitle">Our Properties</span>
+        <h2>Featured Listings</h2>
+        <div class="properties-grid">
+            <div class="property-card">
+                <div class="property-image">
+                    <img src="pexels-binyaminmellish-1396122.jpg" alt="Modern Luxury Villa">
+                    <span class="property-tag">For Sale</span>
+                </div>
+                <div class="property-content">
+                    <h3>Modern Luxury Villa</h3>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Beverly Hills, CA</p>
+                    <p class="price">$2,500,000</p>
+                    <div class="property-features">
+                        <span><i class="fas fa-bed"></i> 5 Beds</span>
+                        <span><i class="fas fa-bath"></i> 4 Baths</span>
+                        <span><i class="fas fa-ruler-combined"></i> 4,500 sqft</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="property-card">
+                <div class="property-image">
+                    <img src="pexels-pixabay-164522.jpg" alt="Waterfront Estate">
+                    <span class="property-tag">For Sale</span>
+                </div>
+                <div class="property-content">
+                    <h3>Waterfront Estate</h3>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Miami Beach, FL</p>
+                    <p class="price">$3,200,000</p>
+                    <div class="property-features">
+                        <span><i class="fas fa-bed"></i> 6 Beds</span>
+                        <span><i class="fas fa-bath"></i> 5 Baths</span>
+                        <span><i class="fas fa-ruler-combined"></i> 5,200 sqft</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="property-card">
+                <div class="property-image">
+                    <img src="pexels-pixabay-280221.jpg" alt="Contemporary Downtown Penthouse">
+                    <span class="property-tag">For Sale</span>
+                </div>
+                <div class="property-content">
+                    <h3>Downtown Penthouse</h3>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> New York, NY</p>
+                    <p class="price">$4,800,000</p>
+                    <div class="property-features">
+                        <span><i class="fas fa-bed"></i> 4 Beds</span>
+                        <span><i class="fas fa-bath"></i> 3.5 Baths</span>
+                        <span><i class="fas fa-ruler-combined"></i> 3,800 sqft</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="property-card">
+                <div class="property-image">
+                    <img src="pexels-binyaminmellish-1396132.jpg" alt="Mediterranean Villa">
+                    <span class="property-tag">For Sale</span>
+                </div>
+                <div class="property-content">
+                    <h3>Mediterranean Villa</h3>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Santa Barbara, CA</p>
+                    <p class="price">$3,900,000</p>
+                    <div class="property-features">
+                        <span><i class="fas fa-bed"></i> 5 Beds</span>
+                        <span><i class="fas fa-bath"></i> 4.5 Baths</span>
+                        <span><i class="fas fa-ruler-combined"></i> 4,200 sqft</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="property-card">
+                <div class="property-image">
+                    <img src="pexels-pixabay-280222.jpg" alt="Luxury Beachfront Condo">
+                    <span class="property-tag">For Sale</span>
+                </div>
+                <div class="property-content">
+                    <h3>Beachfront Condo</h3>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Malibu, CA</p>
+                    <p class="price">$2,900,000</p>
+                    <div class="property-features">
+                        <span><i class="fas fa-bed"></i> 3 Beds</span>
+                        <span><i class="fas fa-bath"></i> 3 Baths</span>
+                        <span><i class="fas fa-ruler-combined"></i> 2,800 sqft</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="property-card">
+                <div class="property-image">
+                    <img src="pexels-pixabay-210617.jpg" alt="Modern City Apartment">
+                    <span class="property-tag">For Sale</span>
+                </div>
+                <div class="property-content">
+                    <h3>City Apartment</h3>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> San Francisco, CA</p>
+                    <p class="price">$1,850,000</p>
+                    <div class="property-features">
+                        <span><i class="fas fa-bed"></i> 2 Beds</span>
+                        <span><i class="fas fa-bath"></i> 2 Baths</span>
+                        <span><i class="fas fa-ruler-combined"></i> 1,500 sqft</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="browse-more-properties">
+            <button class="browse-more">Browse More Properties</button>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <div class="contact-container">
+        <h2>Looking to be a landlord?</h2>
+        <p class="contact-description">Discover ways to increase your home's value and get listed. No Spam.</p>
+        
+        <form class="subscribe-form">
+            <div class="input-group">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+        
+        <p class="community-text">Join 10,000+ other landlords in our estatery community.</p>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="logo2.png" alt="Logo">
+            </div>
+            <div class="footer-links">
+                <a href="#" class="social-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+                <a href="#" class="social-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/>
+                    </svg>
+                </a>
+                <a href="#" class="social-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.204.013-3.667.07-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+                <a href="#" class="social-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"/><path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-menu">
+                <a href="#">Terms</a>
+                <a href="#">Conditions</a>
+                <a href="#">Service</a>
+            </div>
+            <div class="copyright">
+                <p> 2025 MSHomes Property. All rights reserved.</p>
+                <!-- <p class="built-by">Built by <a href="#">IzyDev</a></p> -->
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
