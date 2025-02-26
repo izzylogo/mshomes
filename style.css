@@ -220,6 +220,7 @@
     color: white;
     padding: 25px;
     border-radius: 15px;
+    animation: moveUpDown 2s ease-in-out infinite alternate;
 }
 
 .stats-number {
@@ -1363,6 +1364,19 @@ html {
     }
     50% {
         transform: translateY(-15px); /* Move up more */
+    }
+    100% {
+        transform: translateY(0); /* Move back down */
+    }
+}
+
+/* Animation for stats card */
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px); /* Move up slightly */
     }
     100% {
         transform: translateY(0); /* Move back down */
