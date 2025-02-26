@@ -13,6 +13,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 40px;
+    position: relative;
 }
 
 @media (max-width: 768px) {
@@ -567,6 +568,7 @@
     outline: none;
     font-size: 1rem;
     border-radius: 6px;
+    width: auto;
 }
 
 .input-group button {
@@ -745,25 +747,28 @@
 }
 
 .mobile-menu {
+    display: none; /* Hide by default */
     position: fixed;
     top: 0;
-    right: -100%;
-    width: 250px;
-    height: 100vh;
-    background-color: white;
-    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
-    transition: right 0.3s ease-in-out;
-    z-index: 1001;
+    right: 0;
+    width: 250px; /* Adjust as needed */
+    height: 100%;
+    background-color: #fff; /* Background color */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* Ensure it appears above other content */
+    transition: transform 0.3s ease; /* Smooth transition */
+    transform: translateX(100%); /* Start off-screen */
 }
 
 .mobile-menu.active {
-    right: 0;
+    display: block; /* Show when active */
+    transform: translateX(0); /* Slide in */
 }
 
 .mobile-menu-header {
-    padding: 20px;
     display: flex;
     justify-content: flex-end;
+    padding: 10px;
 }
 
 .close-menu {
@@ -778,25 +783,15 @@
 .mobile-nav-links {
     list-style: none;
     padding: 0;
-    margin: 0;
 }
 
 .mobile-nav-links li {
-    border-bottom: 1px solid #eee;
+    padding: 15px 20px; /* Adjust padding */
 }
 
-.mobile-nav-links a {
-    display: block;
-    padding: 15px 20px;
-    color: #333;
+.mobile-nav-links li a {
     text-decoration: none;
-    font-size: 1rem;
-    transition: background-color 0.3s;
-}
-
-.mobile-nav-links a:hover {
-    background-color: #f5f5f5;
-    color: #6c5ce7;
+    color: #333; /* Link color */
 }
 
 @media (max-width: 768px) {
@@ -821,7 +816,7 @@ body {
 /* Header/Navbar */
 header {
     background: #fff;
-    padding: 12px 40px;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -831,28 +826,41 @@ header {
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
+.logo {
+    margin-right: 40px;
+}
+
 .nav-links {
-    list-style: none;
     display: flex;
-    gap: 35px;
-    margin: 0;
-    padding: 0;
+    gap: 20px;
 }
 
 .nav-links li {
-    display: inline;
+    list-style: none;
 }
 
 .nav-links a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    font-size: 0.9rem;
-    transition: color 0.3s;
+    position: relative; /* Position relative for the pseudo-element */
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Link color */
+    font-weight: 500; /* Optional: make links bold */
+    padding: 5px 0; /* Add some vertical padding */
 }
 
-.nav-links a:hover {
-    color: #6c5ce7;
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Position the line below the text */
+    width: 100%; /* Full width of the link */
+    height: 2px; /* Line thickness */
+    background-color: #6c5ce7; /* Accent color */
+    transform: scaleX(0); /* Start with scale 0 (hidden) */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1); /* Scale to full width on hover */
 }
 
 .login-btn {
@@ -1121,5 +1129,242 @@ header {
 
     .stat-item p {
         font-size: 10px;
+    }
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 50px 20px;
+    background-color: #F8F5FF;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* .testimonials-container {
+    max-width: 1300px;
+    margin: 0 auto;
+} */
+
+.testimonials-container h2 {
+    margin-bottom: 20px;
+    color: #1e1e1e;
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.testimonial-item {
+    background: #fff;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    width: 40%; /* Default width for larger screens */
+    position: relative;
+}
+
+.testimonial-item p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.testimonial-item p::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 2px;
+    background-color: #6c5ce7;
+    margin: 10px auto;
+}
+
+.testimonial-item h4 {
+    font-weight: 600;
+    color: #6c5ce7;
+    margin-top: 10px;
+}
+
+.testimonial-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Buttons */
+button.prev,
+button.next {
+    background-color: #6c5ce7;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+button.prev:hover,
+button.next:hover {
+    background-color: #5b4bc4;
+    transform: scale(1.1);
+}
+
+button.prev:focus,
+button.next:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.5);
+}
+
+/* Dots */
+.carousel-dots {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.carousel-dots span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    background-color: #6c5ce7;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.carousel-dots .active {
+    background-color: #5b4bc4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .testimonial-item {
+        width: 80%; /* Increase width for smaller screens */
+        margin: 10px auto; /* Center the items */
+    }
+
+    .carousel-slide {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonial-item {
+        width: 90%; /* Further increase width for very small screens */
+    }
+
+    .testimonials {
+        padding: 30px 10px; /* Adjust padding for smaller screens */
+    }
+
+    .testimonials-container h2 {
+        font-size: 2rem; /* Adjust heading size */
+    }
+}
+
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling for all anchor links */
+}
+
+.hero-testimonial-card {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px; /* Adjusted padding */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    width: 220px; /* Increased width */
+    animation: moveUpDown 4s ease-in-out infinite alternate; /* Smoother animation */
+}
+
+.hero-testimonial-card h3 {
+    font-size: 1rem; /* Smaller font size */
+    margin: 0;
+    color: #6c5ce7; /* Changed to purple */
+}
+
+.hero-testimonial-card p {
+    margin: 5px 0;
+    color: #666;
+    font-size: 12px; /* Reduced to 12px */
+}
+
+.hero-testimonial-card blockquote {
+    font-style: italic;
+    margin: 10px 0;
+    color: #333;
+    border-left: 4px solid #6c5ce7;
+    padding-left: 10px;
+    font-size: 10px; /* Reduced to 10px */
+}
+
+.testimonial-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.testimonial-stats span {
+    font-size: 12px; /* Adjusted font size for span */
+}
+
+/* Animation */
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px); /* Move up more */
+    }
+    100% {
+        transform: translateY(0); /* Move back down */
     }
 }

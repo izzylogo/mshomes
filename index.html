@@ -20,6 +20,8 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#properties">Properties</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <!-- <li><a href="#contact">Contact Us</a></li> -->
     </ul>
     <a href="#contact" class="login-btn">Contact Us</a>
     <button class="menu-btn">
@@ -37,6 +39,8 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#properties">Properties</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact Us</a></li>
     </ul>
 </div>
 
@@ -71,9 +75,23 @@
                 </div>
             </div>
         </div>
-        <div class="hero-image">
-            <!-- <div class="dots-pattern"></div> -->
+
+        <div class="hero-image" style="position: relative;">
             <img src="hero3.png" alt="Modern Apartment Building.">
+            
+            <!-- Testimonial Card -->
+            <div class="hero-testimonial-card">
+                <h3>Manuel Villa</h3>
+                <p>Renter</p>
+                <p>Moved with <strong>Estatery</strong></p>
+                <blockquote>
+                    "I loved how smooth the move was, and finally got the house we wanted."
+                </blockquote>
+                <div class="testimonial-stats">
+                    <span>$1,500</span>
+                    <span>-24 hrs</span>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -133,7 +151,7 @@
                 </div>
                 <div class="property-content">
                     <h3>Modern Luxury Villa</h3>
-                    <p class="location"><i class="fas fa-map-marker-alt"></i> Beverly Hills, CA</p>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> London, UK</p>
                     <p class="price">$2,500,000</p>
                     <div class="property-features">
                         <span><i class="fas fa-bed"></i> 5 Beds</span>
@@ -150,7 +168,7 @@
                 </div>
                 <div class="property-content">
                     <h3>Waterfront Estate</h3>
-                    <p class="location"><i class="fas fa-map-marker-alt"></i> Miami Beach, FL</p>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Brighton, UK</p>
                     <p class="price">$3,200,000</p>
                     <div class="property-features">
                         <span><i class="fas fa-bed"></i> 6 Beds</span>
@@ -167,7 +185,7 @@
                 </div>
                 <div class="property-content">
                     <h3>Downtown Penthouse</h3>
-                    <p class="location"><i class="fas fa-map-marker-alt"></i> New York, NY</p>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Manchester, UK</p>
                     <p class="price">$4,800,000</p>
                     <div class="property-features">
                         <span><i class="fas fa-bed"></i> 4 Beds</span>
@@ -184,7 +202,7 @@
                 </div>
                 <div class="property-content">
                     <h3>Mediterranean Villa</h3>
-                    <p class="location"><i class="fas fa-map-marker-alt"></i> Santa Barbara, CA</p>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> London, UK</p>
                     <p class="price">$3,900,000</p>
                     <div class="property-features">
                         <span><i class="fas fa-bed"></i> 5 Beds</span>
@@ -201,7 +219,7 @@
                 </div>
                 <div class="property-content">
                     <h3>Beachfront Condo</h3>
-                    <p class="location"><i class="fas fa-map-marker-alt"></i> Malibu, CA</p>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Brighton, UK</p>
                     <p class="price">$2,900,000</p>
                     <div class="property-features">
                         <span><i class="fas fa-bed"></i> 3 Beds</span>
@@ -218,7 +236,7 @@
                 </div>
                 <div class="property-content">
                     <h3>City Apartment</h3>
-                    <p class="location"><i class="fas fa-map-marker-alt"></i> San Francisco, CA</p>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Manchester, UK</p>
                     <p class="price">$1,850,000</p>
                     <div class="property-features">
                         <span><i class="fas fa-bed"></i> 2 Beds</span>
@@ -227,12 +245,60 @@
                     </div>
                 </div>
             </div>
+
+            
         </div>
         <div class="browse-more-properties">
             <button class="browse-more">Browse More Properties</button>
         </div>
     </div>
 </section>
+
+<section class="testimonials" id="testimonials">
+        <div class="testimonials-container">
+            <h2>What Our Clients Say</h2>
+            <div class="carousel">
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <div class="carousel-slide">
+                            <div class="testimonial-item">
+                                <p>"MSHomes helped me find my dream home! The service was exceptional and the team was very supportive."</p>
+                                <h4>- John Doe</h4>
+                            </div>
+                            <div class="testimonial-item">
+                                <p>"I had a great experience with MSHomes. They made the buying process so easy and stress-free!"</p>
+                                <h4>- Jane Smith</h4>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="testimonial-item">
+                                <p>"Highly recommend MSHomes! They are professional, knowledgeable, and truly care about their clients."</p>
+                                <h4>- Sarah Johnson</h4>
+                            </div>
+                            <div class="testimonial-item">
+                                <p>"The team at MSHomes was fantastic! They guided me through every step of the process."</p>
+                                <h4>- Michael Brown</h4>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="testimonial-item">
+                                <p>"I couldn't be happier with my new home. MSHomes made it all possible!"</p>
+                                <h4>- Emily Davis</h4>
+                            </div>
+                            <div class="testimonial-item">
+                                <p>"Professional and dedicated service. MSHomes exceeded my expectations!"</p>
+                                <h4>- David Wilson</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+            <div class="carousel-dots"></div>
+        </div>
+    </section>
+    
 
 <section class="contact" id="contact">
     <div class="contact-container">
