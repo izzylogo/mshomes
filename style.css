@@ -401,7 +401,7 @@
     }
 }
 
-/* .properties-grid {
+.properties-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
@@ -418,7 +418,7 @@
     .properties-grid {
         grid-template-columns: 1fr;
     }
-} */
+}
 
 .property-card {
     background: white;
@@ -470,7 +470,7 @@
 }
 
 .property-content {
-    /* padding: 20px; */
+    padding: 20px;
 }
 
 .price {
@@ -601,9 +601,9 @@
         padding: 0 30px;
     }
 
-    /* .properties-grid {
+    .properties-grid {
         grid-template-columns: repeat(2, 1fr);
-    } */
+    }
 }
 
 @media (max-width: 992px) {
@@ -664,9 +664,9 @@
         right: 20px;
     }
 
-    /* .properties-grid {
+    .properties-grid {
         grid-template-columns: 1fr;
-    } */
+    }
 
     .contact h2 {
         font-size: 2rem;
@@ -885,10 +885,6 @@ header {
     }
 
     .nav-links {
-        display: none;
-    }
-
-    .login-btn{
         display: none;
     }
 }
@@ -1387,242 +1383,73 @@ html {
     }
 }
 
-
-.property-card {
+.property-container {
     display: flex;
     flex-direction: column;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    width: 100%;
-    /* max-width: 900px; */
-    margin: auto;
-    padding: 10px;
-    /* margin-bottom: 10px; */
-}
-
-/* Property Image */
-.property-image {
-    width: 700px;
-    height: 650px;
-    position: relative;
-}
-
-
-.property-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-
-.property-tag {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: #5b4bc4;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-.property-card-content{
-    display: flex;
-    padding: 10px;
-}
-
-@media (max-width: 700px) {
-    .property-card-content{
-        flex-direction: column-reverse;
-    }
-}
-
-/* Property Details */
-.property-content {
-    /* padding: 20px; */
-}
-
-.property-name{
-    display: flex;
     align-items: center;
-    gap: 5px;
+    padding: 30px;
 }
 
-.property-title {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.property-type {
-    font-size: 22px;
-    color: #1d4ed8;
-}
-
-.property-price {
-    font-size: 22px;
-    color: #6c5ce7;
-    font-weight: bold;
-}
-
-/* Rent Badge */
-.property-rent {
-    background-color: #6c5ce7;
-    color: white;
-    display: inline-block;
-    padding: 10px;
-    font-size: 14px;
-    border-radius: 5px;
-    text-align: center;
-    margin-top: 10px;
-}
-
-.property-heading {
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 20px;
-}
-
-.property-list {
-    list-style: none;
-    padding: 0;
-}
-
-.property-list li {
-    font-size: 14px;
-    padding: 5px 0;
-    display: flex;
-    align-items: center;
-}
-
-.property-list i {
-    color: #1d4ed8;
-    margin-right: 10px;
-}
-
-/* Cost Breakdown */
-.property-cost {
-    /* padding: 20px; */
-    width: 100%;
-}
-
-.cost-heading {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.cost-list {
-    list-style: none;
-    padding: 0;
-}
-
-.cost-list li {
-    font-size: 14px;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-}
-
-.cost-list i {
-    color: #1d4ed8;
-    margin-right: 10px;
-}
-
-.total-cost {
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 15px;
-}
-
-.total-amount {
-    color: #1d4ed8;
-}
-
-.invest-button {
-    background-color: #1d4ed8;
-    color: white;
-    font-size: 14px;
-    padding: 12px;
-    width: 100%;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
-.invest-button:hover {
-    background-color: #153aa7;
-}
-
-.cost-note {
-    font-size: 12px;
-    color: #555;
-    margin-top: 15px;
-}
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
+    .property-card {
+        flex-direction: column;
+    }
+
     .property-content {
-        padding: 15px;
+        width: 100%;
+        padding: 20px;
     }
 
-    .property-cost {
-        padding: 15px;
+    .property-image {
+        width: 100%;
+        height: 250px;
     }
 
-    .cost-note {
-        font-size: 11px;
+    .cost-images {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cost-images img {
+        width: 90%;
     }
 }
 
 @media screen and (max-width: 480px) {
-    .property-cost {
-        /* padding: 15px; */
+    .property-container {
+        padding: 15px;
+    }
+
+    .property-content {
+        padding: 15px;
     }
 
     .cost-note {
-        font-size: 10px;
+        font-size: 12px;
     }
+}
+
+.property-image {
+    position: relative;
+    width: 100%;
+    height: 300px; 
+    overflow: hidden;
+    /* border-radius: 10px; */
 }
 
 .property-carousel {
     position: relative;
-    width: 500px;
-    height: 650px;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
-    border-radius: 10px;
 }
 
 .property-carousel-track {
     display: flex;
     width: 100%;
     overflow: hidden;
-}
-
-@media (max-width: 900px) {
-    .property-image{
-        width: 100%;
-        height: 400px;
-    }
-
-    .property-image img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .property-carousel{
-        width: 100%;
-        height: 100%;
-    }
-}
-
-@media (max-width: 700px) {
-    .property-image{
-        height: 600px;
-        margin-bottom: 30px;
-    }
 }
 
 .property-carousel-images {
@@ -1633,21 +1460,22 @@ html {
 
 .property-carousel-images img {
     min-width: 100%;
-    height: 650px;
-    object-fit: cover;
+    height: 400px;
+    /* object-fit: cover; */
 }
 
 .property-prev-btn, .property-next-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
+    background: #5b4bc4a3;
     color: white;
     border: none;
     padding: 10px 15px;
     cursor: pointer;
-    font-size: 24px;
-    border-radius: 5px;
+    font-size: 12px;
+    border-radius: 25px;
+    z-index: 10;
 }
 
 .property-prev-btn { left: 10px; }
@@ -1659,18 +1487,23 @@ html {
 
 /* Dots Navigation */
 .property-carousel-dots {
-    text-align: center;
-    margin-top: 10px;
+    position: absolute;
+    bottom: 10px; /* Position dots inside the image */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
 }
 
 .property-carousel-dots span {
     display: inline-block;
     width: 10px;
     height: 10px;
-    margin: 5px;
-    background: #bbb;
+    background: rgba(255, 255, 255, 0.7);
     border-radius: 50%;
     cursor: pointer;
+    transition: background 0.3s;
 }
 
 .property-carousel-dots span.active {

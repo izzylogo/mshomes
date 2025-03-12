@@ -157,9 +157,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    const carousels = document.querySelectorAll(".property-carousel");
+    const propertyCarousels = document.querySelectorAll(".property-carousel");
 
-    carousels.forEach((carousel, index) => {
+    propertyCarousels.forEach((carousel) => {
         let currentSlide = 0;
         const imagesContainer = carousel.querySelector(".property-carousel-images");
         const images = imagesContainer.querySelectorAll("img");
