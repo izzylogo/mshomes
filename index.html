@@ -23,7 +23,7 @@
         <li><a href="#testimonials">Testimonials</a></li>
         <!-- <li><a href="#contact">Contact Us</a></li> -->
     </ul>
-    <a href="#contact" class="login-btn">Contact Us</a>
+    <!-- <a href="#contact" class="login-btn">Contact Us</a> -->
     <button class="menu-btn">
         <i class="fas fa-bars"></i>
     </button>
@@ -145,23 +145,208 @@
         <h2>Featured Listings</h2>
         <div class="properties-grid">
             <div class="property-card">
-                <div class="property-image">
-                    <img src="pexels-binyaminmellish-1396122.jpg" alt="Modern Luxury Villa">
-                    <span class="property-tag">For Sale</span>
-                </div>
-                <div class="property-content">
-                    <h3>Modern Luxury Villa</h3>
-                    <p class="location"><i class="fas fa-map-marker-alt"></i> London, UK</p>
-                    <p class="price">$2,500,000</p>
-                    <div class="property-features">
-                        <span><i class="fas fa-bed"></i> 5 Beds</span>
-                        <span><i class="fas fa-bath"></i> 4 Baths</span>
-                        <span><i class="fas fa-ruler-combined"></i> 4,500 sqft</span>
+                <div class="property-card-content">
+                    <div class="property-name-title">
+                        <div class="property-name">
+                            <h1 class="property-title">H1</h1>
+                            <h2 class="property-type">Small 2-Bed</h2>
+                            <p class="property-price">£76,999</p>
+                        </div>
+                        <!-- Property Details -->
+                        <div class="property-content">            
+                            <div class="property-rent">
+                                <span class="rent-text">7% Net Rent</span>
+                                <span class="rent-amount">£5,390</span>
+                                <span class="rent-year">Per Year</span>
+                            </div>
+                    
+                            <h3 class="property-heading">House Layout</h3>
+                            <p class="property-description">
+                                Two small rooms downstairs comprising Lounge and combined Dining Room/Kitchen with rear yard. Two small bedrooms and 3-piece bathroom.
+                            </p>
+                    
+                            <h3 class="property-heading">Property Sizes</h3>
+                            <ul class="property-list">
+                                <li><i class="fas fa-couch"></i> <strong>Lounge:</strong> 12ft by 13ft (3.7m by 4m)</li>
+                                <li><i class="fas fa-utensils"></i> <strong>Kitchen/Diner:</strong> 12ft by 10ft (3.7m by 3m)</li>
+                                <li><i class="fas fa-bed"></i> <strong>Bedroom 1:</strong> 10ft by 13ft (3m by 4m)</li>
+                                <li><i class="fas fa-bed"></i> <strong>Bedroom 2:</strong> 9ft by 8ft (2.9m by 2.5m)</li>
+                                <li><i class="fas fa-bath"></i> <strong>Bathroom:</strong> 10ft by 6ft (2.9m by 1.9m)</li>
+                                <li><i class="fas fa-door-open"></i> <strong>Rear Yard:</strong> Up to 15ft by 13ft (5m by 4m)</li>
+                                <li><i class="fas fa-parking"></i> <strong>Parking:</strong> Free and ample on street</li>
+                            </ul>
+                        </div>
+                    
+                        <!-- Cost Breakdown Section (Now Inside Property Card) -->
+                        <div class="property-cost">
+                            <h2 class="cost-heading">All Costs To Purchase A H1 Property</h2>
+                            <ul class="cost-list">
+                                <li><i class="fas fa-dot-circle"></i> <strong>£76,999</strong> Property Price</li>
+                                <li><i class="fas fa-dot-circle"></i> <strong>£999</strong> Purchase Cost (Solicitor, land registry, local searches, and 1 yr insurance)</li>
+                                <li><i class="fas fa-dot-circle"></i> <strong>£3,850</strong> Stamp Duty @ 5%* (Applicable if you already own another property)</li>
+                            </ul>
+                    
+                            <h2 class="total-cost">Total Cost <span class="total-amount">£81,848</span></h2>
+                        </div>
                     </div>
+                    
+                     <!-- Property Image -->
+                     <div class="property-image">
+                        <div class="property-carousel">
+                            <button class="property-prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+                            <div class="property-carousel-track">
+                                <div class="property-carousel-images">
+                                    <img src="H1-1.jpg" alt="Property Image">
+                                    <img src="h1-bathroom.jpg" alt="Property Image">
+                                    <img src="h1-bed.jpg" alt="Property Image">
+                                    <img src="h1-lounge.jpg" alt="Property Image">
+                                </div>
+                            </div>
+                            <button class="property-next-btn" onclick="moveSlide(1)">&#10095;</button>
+                        </div>
+                        <div class="property-carousel-dots"></div>
+                        <span class="property-tag">For Sale</span>
+                    </div>
+                    
                 </div>
             </div>
-
+            <br>
             <div class="property-card">
+                <div class="property-card-content">
+                    <div class="property-name-title">
+                        <div class="property-name">
+                            <h1 class="property-title">H2</h1>
+                            <h2 class="property-type">Small 2-Bed</h2>
+                            <p class="property-price">£66,999</p>
+                        </div>
+                        <!-- Property Details -->
+                        <div class="property-content">            
+                            <div class="property-rent">
+                                <span class="rent-text">7% Net Rent</span>
+                                <span class="rent-amount">£4,390</span>
+                                <span class="rent-year">Per Year</span>
+                            </div>
+                    
+                            <h3 class="property-heading">House Layout</h3>
+                            <p class="property-description">
+                                Two small rooms downstairs comprising Lounge and combined Dining Room/Kitchen with rear yard. Two small bedrooms and 3-piece bathroom.
+                            </p>
+                    
+                            <h3 class="property-heading">Property Sizes</h3>
+                            <ul class="property-list">
+                                <li><i class="fas fa-couch"></i> <strong>Lounge:</strong> 10ft by 13ft (3.7m by 4m)</li>
+                                <li><i class="fas fa-utensils"></i> <strong>Kitchen/Diner:</strong> 12ft by 10ft (3.7m by 3m)</li>
+                                <li><i class="fas fa-bed"></i> <strong>Bedroom 1:</strong> 11ft by 13ft (3m by 4m)</li>
+                                <li><i class="fas fa-bed"></i> <strong>Bedroom 2:</strong> 9ft by 8ft (2.9m by 2.5m)</li>
+                                <li><i class="fas fa-bath"></i> <strong>Bathroom:</strong> 12ft by 6ft (2.9m by 1.9m)</li>
+                                <li><i class="fas fa-door-open"></i> <strong>Rear Yard:</strong> Up to 15ft by 13ft (5m by 4m)</li>
+                                <li><i class="fas fa-parking"></i> <strong>Parking:</strong> Free and ample on street</li>
+                            </ul>
+                        </div>
+                    
+                        <!-- Cost Breakdown Section (Now Inside Property Card) -->
+                        <div class="property-cost">
+                            <h2 class="cost-heading">All Costs To Purchase A H1 Property</h2>
+                            <ul class="cost-list">
+                                <li><i class="fas fa-dot-circle"></i> <strong>£66,999</strong> Property Price</li>
+                                <li><i class="fas fa-dot-circle"></i> <strong>£999</strong> Purchase Cost (Solicitor, land registry, local searches, and 1 yr insurance)</li>
+                                <li><i class="fas fa-dot-circle"></i> <strong>£3,450</strong> Stamp Duty @ 5%* (Applicable if you already own another property)</li>
+                            </ul>
+                    
+                            <h2 class="total-cost">Total Cost <span class="total-amount">£74,540</span></h2>
+                        </div>
+                    </div>
+                    
+                     <!-- Property Image -->
+                     <div class="property-image">
+                        <div class="property-carousel">
+                            <button class="property-prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+                            <div class="property-carousel-track">
+                                <div class="property-carousel-images">
+                                    <img src="h1-external.png" alt="Property Image">
+                                    <img src="h2-bathroom.jpg" alt="Property Image">
+                                    <img src="h2-kitchen.jpg" alt="Property Image">
+                                    <img src="h2-lounge.jpg" alt="Property Image">
+                                </div>
+                            </div>
+                            <button class="property-next-btn" onclick="moveSlide(1)">&#10095;</button>
+                        </div>
+                        <div class="property-carousel-dots"></div>
+                        <span class="property-tag">For Sale</span>
+                    </div>
+                    
+                </div>
+            </div>
+            <br>
+            <div class="property-card">
+                <div class="property-card-content">
+                    <div class="property-name-title">
+                        <div class="property-name">
+                            <h1 class="property-title">H3</h1>
+                            <h2 class="property-type">Small 2-Bed</h2>
+                            <p class="property-price">£86,999</p>
+                        </div>
+                        <!-- Property Details -->
+                        <div class="property-content">            
+                            <div class="property-rent">
+                                <span class="rent-text">7% Net Rent</span>
+                                <span class="rent-amount">£7,390</span>
+                                <span class="rent-year">Per Year</span>
+                            </div>
+                    
+                            <h3 class="property-heading">House Layout</h3>
+                            <p class="property-description">
+                                Two small rooms downstairs comprising Lounge and combined Dining Room/Kitchen with rear yard. Two small bedrooms and 3-piece bathroom.
+                            </p>
+                    
+                            <h3 class="property-heading">Property Sizes</h3>
+                            <ul class="property-list">
+                                <li><i class="fas fa-couch"></i> <strong>Lounge:</strong> 13ft by 14ft (3.7m by 4m)</li>
+                                <li><i class="fas fa-utensils"></i> <strong>Kitchen/Diner:</strong> 11ft by 14ft (3.7m by 3m)</li>
+                                <li><i class="fas fa-bed"></i> <strong>Bedroom 1:</strong> 10ft by 13ft (3m by 4m)</li>
+                                <li><i class="fas fa-bed"></i> <strong>Bedroom 2:</strong> 9ft by 10ft (2.9m by 2.5m)</li>
+                                <li><i class="fas fa-bath"></i> <strong>Bathroom:</strong> 12ft by 6ft (2.9m by 1.9m)</li>
+                                <li><i class="fas fa-door-open"></i> <strong>Rear Yard:</strong> Up to 15ft by 13ft (5m by 4m)</li>
+                                <li><i class="fas fa-parking"></i> <strong>Parking:</strong> Free and ample on street</li>
+                            </ul>
+                        </div>
+                    
+                        <!-- Cost Breakdown Section (Now Inside Property Card) -->
+                        <div class="property-cost">
+                            <h2 class="cost-heading">All Costs To Purchase A H1 Property</h2>
+                            <ul class="cost-list">
+                                <li><i class="fas fa-dot-circle"></i> <strong>£85,999</strong> Property Price</li>
+                                <li><i class="fas fa-dot-circle"></i> <strong>£999</strong> Purchase Cost (Solicitor, land registry, local searches, and 1 yr insurance)</li>
+                                <li><i class="fas fa-dot-circle"></i> <strong>£4,990</strong> Stamp Duty @ 5%* (Applicable if you already own another property)</li>
+                            </ul>
+                    
+                            <h2 class="total-cost">Total Cost <span class="total-amount">£81,848</span></h2>
+                        </div>
+                    </div>
+                    
+                     <!-- Property Image -->
+                     <div class="property-image">
+                        <div class="property-carousel">
+                            <button class="property-prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+                            <div class="property-carousel-track">
+                                <div class="property-carousel-images">
+                                    <img src="H4.jpg" alt="Property Image">
+                                    <img src="h4-bahroom.jpg" alt="Property Image">
+                                    <img src="h4-kitchen.jpg" alt="Property Image">
+                                    <img src="h4-lounge.jpg" alt="Property Image">
+                                </div>
+                            </div>
+                            <button class="property-next-btn" onclick="moveSlide(1)">&#10095;</button>
+                        </div>
+                        <div class="property-carousel-dots"></div>
+                        <span class="property-tag">For Sale</span>
+                    </div>
+                    
+                </div>
+            </div>
+            
+
+            <!-- <div class="property-card">
                 <div class="property-image">
                     <img src="pexels-pixabay-164522.jpg" alt="Waterfront Estate">
                     <span class="property-tag">For Sale</span>
@@ -244,7 +429,7 @@
                         <span><i class="fas fa-ruler-combined"></i> 1,500 sqft</span>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             
         </div>

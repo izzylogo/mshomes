@@ -94,3 +94,130 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+
+
+
+
+
+// let currentSlide = 0;
+
+// function changeSlide(step) {
+//     const propertySlides = document.querySelectorAll(".property-carousel-images img");
+//     const totalPropertySlides = propertySlides.length;
+//     currentSlide += step;
+
+//     if (currentSlide >= totalPropertySlides) {
+//         currentSlide = 0;
+//     } else if (currentSlide < 0) {
+//         currentSlide = totalPropertySlides - 1;
+//     }
+
+//     updatePropertyCarousel();
+// }
+
+// function updatePropertyCarousel() {
+//     const propertyTrack = document.querySelector(".property-carousel-images");
+//     const propertyDots = document.querySelectorAll(".property-carousel-dots span");
+
+//     propertyTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+//     // Update active dot
+//     propertyDots.forEach((dot, index) => {
+//         dot.classList.toggle("active", index === currentSlide);
+//     });
+// }
+
+// function createPropertyDots() {
+//     const propertySlides = document.querySelectorAll(".property-carousel-images img");
+//     const propertyDotsContainer = document.querySelector(".property-carousel-dots");
+
+//     propertySlides.forEach((_, index) => {
+//         const dot = document.createElement("span");
+//         dot.addEventListener("click", () => {
+//             currentSlide = index;
+//             updatePropertyCarousel();
+//         });
+//         propertyDotsContainer.appendChild(dot);
+//     });
+
+//     updatePropertyCarousel(); // Set initial active dot
+// }
+
+// // Auto-slide function
+// function autoPropertySlide() {
+//     changeSlide(1);
+// }
+
+// // Initialize dots and set auto-slide every 4 seconds
+// document.addEventListener("DOMContentLoaded", () => {
+//     createPropertyDots();
+//     setInterval(autoPropertySlide, 4000);
+// });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const carousels = document.querySelectorAll(".property-carousel");
+
+    carousels.forEach((carousel, index) => {
+        let currentSlide = 0;
+        const imagesContainer = carousel.querySelector(".property-carousel-images");
+        const images = imagesContainer.querySelectorAll("img");
+        const totalSlides = images.length;
+        const prevButton = carousel.querySelector(".property-prev-btn");
+        const nextButton = carousel.querySelector(".property-next-btn");
+        const dotsContainer = carousel.nextElementSibling; // Assuming dots are right after carousel
+
+        // Function to update slide position
+        function updateCarousel() {
+            imagesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+            // Update active dot
+            const dots = dotsContainer.querySelectorAll("span");
+            dots.forEach((dot, i) => {
+                dot.classList.toggle("active", i === currentSlide);
+            });
+        }
+
+        // Function to move slide
+        function changeSlide(step) {
+            currentSlide += step;
+
+            if (currentSlide >= totalSlides) {
+                currentSlide = 0;
+            } else if (currentSlide < 0) {
+                currentSlide = totalSlides - 1;
+            }
+
+            updateCarousel();
+        }
+
+        // Function to create navigation dots
+        function createDots() {
+            dotsContainer.innerHTML = ""; // Clear existing dots if any
+            images.forEach((_, i) => {
+                const dot = document.createElement("span");
+                dot.addEventListener("click", () => {
+                    currentSlide = i;
+                    updateCarousel();
+                });
+                dotsContainer.appendChild(dot);
+            });
+
+            updateCarousel(); // Set initial active dot
+        }
+
+        // Auto-slide function
+        function autoSlide() {
+            changeSlide(1);
+        }
+
+        // Event listeners for buttons
+        prevButton.addEventListener("click", () => changeSlide(-1));
+        nextButton.addEventListener("click", () => changeSlide(1));
+
+        // Initialize dots and set auto-slide every 4 seconds
+        createDots();
+        setInterval(autoSlide, 4000);
+    });
+});
