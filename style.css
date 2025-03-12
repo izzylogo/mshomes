@@ -1454,7 +1454,7 @@ html {
 
 .property-carousel-images {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.8s ease;
     width: 100%;
 }
 

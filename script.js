@@ -161,26 +161,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
     propertyCarousels.forEach((carousel) => {
         let currentSlide = 0;
+        let isAnimating = false; // Prevents multiple clicks at once
         const imagesContainer = carousel.querySelector(".property-carousel-images");
         const images = imagesContainer.querySelectorAll("img");
         const totalSlides = images.length;
         const prevButton = carousel.querySelector(".property-prev-btn");
         const nextButton = carousel.querySelector(".property-next-btn");
-        const dotsContainer = carousel.nextElementSibling; // Assuming dots are right after carousel
+        const dotsContainer = carousel.parentElement.querySelector(".property-carousel-dots");
 
-        // Function to update slide position
         function updateCarousel() {
+            if (isAnimating) return; // Prevent spamming clicks
+
+            isAnimating = true; // Lock animation
             imagesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
 
-            // Update active dot
+            // Smoothly update active dot
             const dots = dotsContainer.querySelectorAll("span");
             dots.forEach((dot, i) => {
                 dot.classList.toggle("active", i === currentSlide);
             });
+
+            // Unlock after transition
+            setTimeout(() => {
+                isAnimating = false;
+            }, 800);
         }
 
-        // Function to move slide
         function changeSlide(step) {
+            if (isAnimating) return; // Prevents rapid clicking
+
             currentSlide += step;
 
             if (currentSlide >= totalSlides) {
@@ -192,7 +201,6 @@ document.addEventListener("DOMContentLoaded", function () {
             updateCarousel();
         }
 
-        // Function to create navigation dots
         function createDots() {
             dotsContainer.innerHTML = ""; // Clear existing dots if any
             images.forEach((_, i) => {
@@ -207,17 +215,15 @@ document.addEventListener("DOMContentLoaded", function () {
             updateCarousel(); // Set initial active dot
         }
 
-        // Auto-slide function
         function autoSlide() {
             changeSlide(1);
         }
 
-        // Event listeners for buttons
+        // Attach event listeners
         prevButton.addEventListener("click", () => changeSlide(-1));
         nextButton.addEventListener("click", () => changeSlide(1));
 
-        // Initialize dots and set auto-slide every 4 seconds
         createDots();
-        setInterval(autoSlide, 4000);
+        setInterval(autoSlide, 10000); // Increased auto-slide time for better user experience
     });
 });
