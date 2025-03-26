@@ -3,7 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MSHomes</title>
+    <meta name="description" content="Discover luxury real estate properties in the UK. Browse our collection of modern villas, luxury estates, and contemporary homes in Oxford, Cambridge, York, Bath, and Edinburgh.">
+    <meta name="keywords" content="real estate, luxury homes, property listings, UK real estate, modern villas, luxury estates, Oxford properties, Cambridge properties, York properties, Bath properties, Edinburgh properties">
+    <meta name="author" content="MSHomes">
+    <meta property="og:title" content="MSHomes - Luxury Real Estate Properties">
+    <meta property="og:description" content="Find your dream luxury home in the UK's most prestigious locations. Properties ranging from £85,000 to £385,000.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/logo2.png">
+    <meta name="robots" content="index, follow">
+    <title>MSHomes - Luxury Real Estate Properties in UK</title>
     <link rel="icon" href="assets/logo2.jpeg" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -214,8 +222,8 @@
                         <div class="property-carousel-track">
                             <div class="property-carousel-images">
                                 <img src="assets/pexels-binyaminmellish-1396132.jpg" alt="Waterfront Estate">
-                                <img src="assets/bed (3).jpg" alt="Living Room">
-                                <img src="assets/dinning (3).jpg" alt="Bedroom">
+                                <img src="assets/bed (3).jpg" alt="Bedroom">
+                                <img src="assets/dinning (3).jpg" alt="Dining Room">
                                 <img src="assets/toilet (3).jpg" alt="Bathroom">
                             </div>
                         </div>
@@ -494,7 +502,7 @@
         <h2 data-aos="fade-up">Looking to be a landlord?</h2>
         <p class="contact-description" data-aos="fade-up" data-aos-delay="200">Discover ways to increase your home's value and get listed. No Spam.</p>
         
-        <form class="subscribe-form" id="contactForm" onsubmit="return submitForm(event)" data-aos="fade-up" data-aos-delay="400">
+        <form class="subscribe-form" id="contactForm" action="send_email.php" method="POST" data-aos="fade-up" data-aos-delay="400">
             <div class="input-group">
                 <input type="email" name="email" id="email" placeholder="Enter your email address" required>
                 <button type="submit">Submit</button>
@@ -505,6 +513,46 @@
         <p class="community-text">Join 10,000+ other landlords in our estatery community.</p>
     </div>
 </section>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(this);
+    const messageDiv = document.getElementById('formMessage');
+    
+    fetch('send_email.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        messageDiv.innerHTML = 'Thank you! We will be in touch soon.';
+        messageDiv.style.color = '#4CAF50';
+        messageDiv.style.backgroundColor = '#e8f5e9';
+        messageDiv.style.padding = '12px 20px';
+        messageDiv.style.marginTop = '10px';
+        messageDiv.style.borderRadius = '6px';
+        messageDiv.style.border = '1px solid #4CAF50';
+        messageDiv.style.fontSize = '0.9rem';
+        messageDiv.style.width = 'fit-content';
+        messageDiv.style.margin = '10px auto';
+        document.getElementById('email').value = '';
+    })
+    .catch(error => {
+        messageDiv.innerHTML = 'Oops! Something went wrong. Please try again.';
+        messageDiv.style.color = '#f44336';
+        messageDiv.style.backgroundColor = '#ffebee';
+        messageDiv.style.padding = '12px 20px';
+        messageDiv.style.marginTop = '10px';
+        messageDiv.style.borderRadius = '6px';
+        messageDiv.style.border = '1px solid #f44336';
+        messageDiv.style.fontSize = '0.9rem';
+        messageDiv.style.width = 'fit-content';
+        messageDiv.style.margin = '10px auto';
+    });
+});
+</script>
 
 <footer class="footer" data-aos="fade-up">
     <div class="footer-container">
@@ -525,7 +573,7 @@
                 </a>
                 <a href="#" class="social-link">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.204.013-3.667.07-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.979 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.204.013-3.667.07-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                     </svg>
                 </a>
                 <a href="#" class="social-link">
