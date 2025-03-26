@@ -53,20 +53,38 @@ createDots();
 setInterval(autoSlide, 4000);
 
 document.addEventListener('DOMContentLoaded', function () {
-    const menuBtn = document.querySelector('.menu-btn');
+    const hamburger = document.querySelector('.hamburger');
     const closeBtn = document.querySelector('.close-menu');
     const mobileMenu = document.querySelector('.mobile-menu');
+    const menuOverlay = document.querySelector('.menu-overlay');
+    const mobileMenuLinks = document.querySelectorAll('.mobile-nav-links a');
 
-    menuBtn.addEventListener('click', function() {
-        mobileMenu.classList.add('active'); // Show the mobile menu
-    });
+    function toggleMenu() {
+        mobileMenu.classList.toggle('active');
+        menuOverlay.classList.toggle('active');
+        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    }
 
-    closeBtn.addEventListener('click', function() {
-        mobileMenu.classList.remove('active'); // Hide the mobile menu
+    hamburger.addEventListener('click', toggleMenu);
+    closeBtn.addEventListener('click', toggleMenu);
+    menuOverlay.addEventListener('click', toggleMenu);
+
+    // Close menu when clicking a link
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            toggleMenu();
+            
+            // Smooth scroll to section
+            const targetId = link.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
     });
 
     // Smooth scrolling for navbar links
-    const navLinks = document.querySelectorAll('.nav-links a, .mobile-nav-links a'); // Include mobile links
+    const navLinks = document.querySelectorAll('.nav-links a'); 
 
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -79,82 +97,38 @@ document.addEventListener('DOMContentLoaded', function () {
                 behavior: 'smooth', // Smooth scroll
                 block: 'start' // Align to the start of the section
             });
-
-            // Close mobile menu if it's open
-            if (mobileMenu.classList.contains('active')) {
-                mobileMenu.classList.remove('active'); // Hide the mobile menu
-            }
         });
     });
 
     // Close menu when clicking outside
     document.addEventListener('click', function(event) {
-        if (!mobileMenu.contains(event.target) && !menuBtn.contains(event.target)) {
+        if (!mobileMenu.contains(event.target) && !hamburger.contains(event.target)) {
             mobileMenu.classList.remove('active'); // Hide the mobile menu
         }
     });
 });
 
+// Browse More Properties functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const browseMoreBtn = document.querySelector('.browse-more-properties .browse-more');
+    const propertyCards = document.querySelectorAll('.property-card');
+    let isShowingAll = false;
 
+    browseMoreBtn.addEventListener('click', function() {
+        isShowingAll = !isShowingAll;
+        propertyCards.forEach(card => {
+            card.classList.toggle('show-all', isShowingAll);
+        });
 
+        // Update button text
+        browseMoreBtn.textContent = isShowingAll ? 'Show Less' : 'Browse More Properties';
 
-
-
-// let currentSlide = 0;
-
-// function changeSlide(step) {
-//     const propertySlides = document.querySelectorAll(".property-carousel-images img");
-//     const totalPropertySlides = propertySlides.length;
-//     currentSlide += step;
-
-//     if (currentSlide >= totalPropertySlides) {
-//         currentSlide = 0;
-//     } else if (currentSlide < 0) {
-//         currentSlide = totalPropertySlides - 1;
-//     }
-
-//     updatePropertyCarousel();
-// }
-
-// function updatePropertyCarousel() {
-//     const propertyTrack = document.querySelector(".property-carousel-images");
-//     const propertyDots = document.querySelectorAll(".property-carousel-dots span");
-
-//     propertyTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
-
-//     // Update active dot
-//     propertyDots.forEach((dot, index) => {
-//         dot.classList.toggle("active", index === currentSlide);
-//     });
-// }
-
-// function createPropertyDots() {
-//     const propertySlides = document.querySelectorAll(".property-carousel-images img");
-//     const propertyDotsContainer = document.querySelector(".property-carousel-dots");
-
-//     propertySlides.forEach((_, index) => {
-//         const dot = document.createElement("span");
-//         dot.addEventListener("click", () => {
-//             currentSlide = index;
-//             updatePropertyCarousel();
-//         });
-//         propertyDotsContainer.appendChild(dot);
-//     });
-
-//     updatePropertyCarousel(); // Set initial active dot
-// }
-
-// // Auto-slide function
-// function autoPropertySlide() {
-//     changeSlide(1);
-// }
-
-// // Initialize dots and set auto-slide every 4 seconds
-// document.addEventListener("DOMContentLoaded", () => {
-//     createPropertyDots();
-//     setInterval(autoPropertySlide, 4000);
-// });
-
+        // Reinitialize AOS for newly visible elements
+        if (typeof AOS !== 'undefined') {
+            AOS.refresh();
+        }
+    });
+});
 
 document.addEventListener("DOMContentLoaded", function () {
     const propertyCarousels = document.querySelectorAll(".property-carousel");
